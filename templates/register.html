@@ -1,25 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-    <form class="col s12 m8" method="POST" action= "{{ url_for('register') }}">
-        <h3 class="header center-align">Register</h3>
+    <form class="col s12 form-box offset-m2" method="POST" action= "{{ url_for('register') }}">
+        <div class="card-panel">
+       <!----
         <div class="card horizontal">
             <div class="card-image">
                     <img src="static/images/screen.jpg">
         </div>
+    -->
        <!-- username -->
        <div class="row">
+        <h3 class="header center-align">Register</h3>
         <div class="input-field col s12">
             <i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-            <input id="username" name="username" type="text" class="validate">
+            <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9~@#$^*()_+=[\]{}|\\,.?: -]{5,15}$" minlength="5" maxlength="15" class="validate" required>
             <label for="username">Username</label>
         </div>
     </div>
-    <!-- passowrd -->
+    <!-- password -->
     <div class="row">
         <div class="input-field col s12">
             <i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
-            <input id="password" name="password" type="password" class="validate">
+            <input id="password" name="password" type="password" pattern="^[a-zA-Z0-9~@#$^*()_+=[\]{}|\\,.?: -]{5,15}$" minlength="5" maxlength="15" class="validate" required>
             <label for="password">Password</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
+            <input id="confirm-password" name="confirm-password" type="password" pattern="^[a-zA-Z0-9~@#$^*()_+=[\]{}|\\,.?: -]{5,15}$" minlength="5" maxlength="15" class="validate" required>
+            <label for="password">Confirm Password</label>
         </div>
     </div>
     <!-- register -->
@@ -29,7 +39,7 @@
         </button>
     </div>
         
-    
+    </div> 
     </form>
             
 
