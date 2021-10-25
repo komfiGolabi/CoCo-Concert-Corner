@@ -28,7 +28,7 @@ def get_concerts():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # checking if the username exists in database
+        # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -44,9 +44,11 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("You have succesfully registered to CoCo!")
+        flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
+
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -83,7 +85,8 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-       
+
+
     if session["user"]:
        return render_template("profile.html", username=username)
 
@@ -96,6 +99,27 @@ def logout():
     flash("You logged out from your profile!")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/new_concert", methods=["GET", "POST"])
+def new_concert():
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"]})
+        new_concert = {
+            "artist": request.form.get("artist"),
+            "city": request.form.get("city"),
+            "country": request.form.get("country"),
+            "venue": request.form.get("venue"),
+            "category_name": request.form.getlist("category_name"),
+            "concert_date": request.form.get("concert_date"),
+            "description": request.form.get("description"),
+            "user_id": ObjectId(user["_id"])
+        }
+        mongo.db.recipes.insert_one(new_concert)
+        flash("Event succesfully added!")
+        return redirect(url_for("new_concert"))
+
+    return render_template("new_concert.html")
 
 
 if __name__ == "__main__":

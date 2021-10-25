@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="title-style s6">
+    <h4>
+        Add the event you have attended!
+    </h4>
+</div>
+
+<div class="row form-bg-col">
+
+    <form class="col s12" method="POST" action="{{ url_for('new_concert') }}" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-music prefix"></i>
+                <input id="artist" type="text" name="artist" minlength="5" maxlength="50" class="validate"
+                    required>
+                <label for="artist">Artist</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-city prefix"></i>
+                <input id="city" type="text" name="city" class="validate" required>
+                <label for="city">City</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-flag prefix"></i>
+                <input id="country" type="text" name="country" class="validate" required>
+                <label for="country">Country</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-building prefix"></i>
+                <input id="venue" type="text" name="venue"class="validate"
+                    required>
+                <div id="dynamicInput"></div>
+                <label for="venue">Venue</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-record-vinyl prefix"></i>
+                <input id="category_name" type="text" name="category_name" minlength="3" maxlength="300" class="validate" required>
+                <div id="dynamicInputTwo"></div>
+                <label for="category_name">Genre</label>
+                <a class="waves-effect waves-light btn" onClick="addMethod('dynamicInputTwo');">Add another genre</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-calendar-alt prefix"></i>
+                <input id="concert_date" type="text" name="concert_date" minlength="3" maxlength="300" class="validate" required>
+                <div id="dynamicInputTwo"></div>
+                <label for="concert_date">Date of the event</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-scroll prefix"></i>
+                <input id="description" type="text" name="description" minlength="3" maxlength="300" class="validate" required>
+                <div id="dynamicInputTwo"></div>
+                <label for="description">Description</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+            <div class="file-field input-field">
+                
+                <div class="btn">
+                    <span >File</span>
+                    <input type="file" name="user_file" accept=".png, .jpg, .jpeg, .gif" required>
+                </div>
+                
+    
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text"
+                        placeholder="Upload Image file (only .png, .jpg, .jpeg, .gif)">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="waves-effect waves-light btn button-style">Submit</button>
+                <a href="{{ url_for('new_concert') }}" class="waves-effect waves-light btn button-style">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
