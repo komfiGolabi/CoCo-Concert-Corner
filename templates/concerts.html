@@ -1,35 +1,24 @@
-<!DOCTYPE html>
 {% extends "base.html" %}
-
 {% block content %}
 
 
-    {% for concert in concerts %}
-    {{ concert.artist}}<br>
-    {{ concert.city }}<br>
-    {{ concert.country }}<br>
-    {{ concert.venue }}<br>
-    {{ concert.category_name }}<br>
-    {{ concert.concert_date }}<br>
-    {{ concert.description}}<br>
-    {{ concert.image}}<br>
+    <ul class="collapsible popout">
 
+      {% for concert in concerts %}
+        <li>
+          <div class="collapsible-header text-shadow"><i class="fas fa-music"></i>
+            <strong>{{ concert.artist }}</strong>:  {{ concert.concert_date }}
+          </div>
+            <div class="collapsible-body">
+              <span>
+              <strong>{{ concert.city }},  {{ concert.country }}</strong>
+              <p>{{ concert.description}}</p>
+              <p>{{ concert.category_name}}</p>
+             </span>
+            </div>
+        </li>
+        
+        {% endfor %}
+    </ul>
 
-{% endfor %}
-
-<ul class="collapsible popout">
-    <li>
-      <div class="collapsible-header"><i class="fas fa-music"></i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="fas fa-music"></i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="fas fa-music"></i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-  </ul>
-      
 {% endblock %}
