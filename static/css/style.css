@@ -2,9 +2,12 @@ body {
     background-color: #FEC260;
 }
 
-.nav-wrapper{
+.nav-wrapper,
+.sidenav,
+.collapsible-header{
     background-color: #A12568;
 }
+
 
 .form-box{
     background-color:white;
