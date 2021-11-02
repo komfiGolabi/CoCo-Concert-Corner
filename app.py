@@ -50,7 +50,6 @@ def register():
     return render_template("register.html")
 
 
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -86,7 +85,6 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-
     if session["user"]:
        return render_template("profile.html", username=username)
 
@@ -113,9 +111,11 @@ def new_concert():
             "category_name": request.form.getlist("category_name"),
             "concert_date": request.form.get("concert_date"),
             "description": request.form.get("description"),
-            "user_id": ObjectId(user["_id"])
+            "uploaded_file": request.form.get("uploaded_file"),
+            "user_id": ObjectId(user["_id"]),
         }
-        mongo.db.recipes.insert_one(new_concert)
+ 
+        mongo.db.concerts.insert_one(new_concert)
         flash("Event succesfully added!")
         return redirect(url_for("new_concert"))
 
