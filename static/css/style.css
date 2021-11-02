@@ -4,10 +4,12 @@ body {
 
 .nav-wrapper,
 .sidenav,
-.collapsible-header{
+.collapsible-header,
+.page-footer{
     background-color: #E63E6D;
     
 }
+
 
 
 
