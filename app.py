@@ -25,6 +25,11 @@ def get_concerts():
     return render_template("concerts.html", concerts=concerts)
 
 
+@app.route("/index")
+def index():
+    return render_template("index.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -61,19 +66,19 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
-                flash("Oops, username/password incorrect!")
+                flash("OOPS, your password/username incorrect!")
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exist
-            flash("Oops, username/password incorrect!")
+            flash("OOPS, your password/username incorrect!")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -86,7 +91,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-       return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
 
@@ -114,12 +119,40 @@ def new_concert():
             "uploaded_file": request.form.get("uploaded_file"),
             "user_id": ObjectId(user["_id"]),
         }
- 
+
         mongo.db.concerts.insert_one(new_concert)
         flash("Event succesfully added!")
         return redirect(url_for("new_concert"))
 
     return render_template("new_concert.html")
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("new_concert.html", categories=categories)
+
+
+@app.route("/edit_concert/<concert_id>", methods=["GET", "POST"])
+def edit_concert(concert_id):
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"]})
+        edit_concert = {
+            "artist": request.form.get("artist"),
+            "city": request.form.get("city"),
+            "country": request.form.get("country"),
+            "venue": request.form.get("venue"),
+            "category_name": request.form.getlist("category_name"),
+            "concert_date": request.form.get("concert_date"),
+            "description": request.form.get("description"),
+            "uploaded_file": request.form.get("uploaded_file"),
+            "user_id": ObjectId(user["_id"]),
+        }
+        
+        mongo.db.concerts.update({"_id": ObjectId(concert_id)}, edit_concert)
+        flash("You succesfully edited your event!")
+
+    concert = mongo.db.concerts.find_one({"_id": ObjectId(concert_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "edit_concert.html", concert=concert, categories=categories)
 
 
 if __name__ == "__main__":

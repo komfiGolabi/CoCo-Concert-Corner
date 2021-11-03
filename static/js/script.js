@@ -2,6 +2,7 @@ $(document).ready(function(){
     $(".dropdown-trigger").dropdown({ hover: false });
     $('.sidenav').sidenav();
     $('.collapsible').collapsible();
+    $('.parallax').parallax();
     $('.datepicker').datepicker({
       format: "dd mmmm, yyyy",
       yearRange: 5,
