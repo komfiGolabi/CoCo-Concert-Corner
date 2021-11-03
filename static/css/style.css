@@ -9,8 +9,9 @@ body {
   }
 
 
-h3{
+h3,h2, h4{
     color:#E63E6D;
+    text-align:center;
 }
 
 .nav-wrapper,
@@ -31,5 +32,8 @@ h3{
 }
 
 
-
+img {
+    width:100%;
+    height:auto;
+}
  
