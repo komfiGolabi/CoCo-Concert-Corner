@@ -11,10 +11,11 @@
             <div class="col s9">
             <i class="fas fa-music"></i>
             <strong>{{ concert.artist }}</strong>:  {{ concert.concert_date }}
-          </div>
-            <div class="col s3">
-              <a href="{{ url_for('edit_concert',concert_id=concert._id) }}" class="btn-small">Edit</a>
-          </div>
+            </div>
+            <div class="col s3"><a href="{{ url_for('delete_concert', concert_id=concert._id) }}" class="btn-small">Delete</a>
+                
+                <a href="{{ url_for('edit_concert',concert_id=concert._id) }}" class="btn-small">Edit</a>
+            </div>
           </div>
          
             <div class="collapsible-body">

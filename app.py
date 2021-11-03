@@ -155,6 +155,15 @@ def edit_concert(concert_id):
         "edit_concert.html", event=event, categories=categories)
 
 
+@app.route("/delete_concert/<concert_id>")
+def delete_concert(concert_id):
+    mongo.db.concerts.remove({"_id": ObjectId(concert_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("get_concerts"))
+
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
