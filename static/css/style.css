@@ -1,6 +1,13 @@
 body {
     background-color: #FEC260;
-}
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+  }
+
 
 h3{
     color:#E63E6D;
@@ -24,3 +31,5 @@ h3{
 }
 
 
+
+ 

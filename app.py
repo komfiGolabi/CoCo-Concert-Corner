@@ -113,7 +113,7 @@ def new_concert():
             "city": request.form.get("city"),
             "country": request.form.get("country"),
             "venue": request.form.get("venue"),
-            "category_name": request.form.getlist("category_name"),
+            "genre": request.form.getlist("genre"),
             "concert_date": request.form.get("concert_date"),
             "description": request.form.get("description"),
             "uploaded_file": request.form.get("uploaded_file"),
@@ -126,7 +126,7 @@ def new_concert():
 
     return render_template("new_concert.html")
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    categories = mongo.db.concerts.find().sort("category", 1)
     return render_template("new_concert.html", categories=categories)
 
 
@@ -139,7 +139,7 @@ def edit_concert(concert_id):
             "city": request.form.get("city"),
             "country": request.form.get("country"),
             "venue": request.form.get("venue"),
-            "category_name": request.form.getlist("category_name"),
+            "genre": request.form.getlist("genre"),
             "concert_date": request.form.get("concert_date"),
             "description": request.form.get("description"),
             "uploaded_file": request.form.get("uploaded_file"),
@@ -149,10 +149,10 @@ def edit_concert(concert_id):
         mongo.db.concerts.update({"_id": ObjectId(concert_id)}, edit_concert)
         flash("You succesfully edited your event!")
 
-    concert = mongo.db.concerts.find_one({"_id": ObjectId(concert_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    event = mongo.db.concerts.find_one({"_id": ObjectId(concert_id)})
+    categories = mongo.db.concerts.find().sort("category", 1)
     return render_template(
-        "edit_concert.html", concert=concert, categories=categories)
+        "edit_concert.html", event=event, categories=categories)
 
 
 if __name__ == "__main__":

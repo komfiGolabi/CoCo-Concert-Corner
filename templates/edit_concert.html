@@ -12,7 +12,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-music prefix"></i>
-                <input id="artist" type="text" name="artist" minlength="5" maxlength="50" class="validate"
+                <input id="artist" type="text" name="artist"
+                value="{{ concert.artist }}" minlength="5" maxlength="50" class="validate"
                     required>
                 <label for="artist">Artist</label>
             </div>
@@ -43,7 +44,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-record-vinyl prefix"></i>
-                <input id="category_name" type="text" name="category_name" minlength="3" maxlength="300" class="validate" required>
+                <input id="genre" type="text" name="genre" minlength="3" maxlength="300" class="validate" required>
                 <div id="dynamicInputTwo"></div>
                 <label for="category_name">Genre</label>
                 <a class="waves-effect waves-light btn" onClick="addMethod('dynamicInputTwo');">Add another genre</a>
@@ -61,7 +62,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-scroll prefix"></i>
-                <input id="description" type="text" name="description" minlength="3" maxlength="300" class="validate" required>
+                <input id="description" type="text" name="description" value="{{- concert.description - }}" minlength="3" maxlength="300" class="validate" required>
                 <div id="dynamicInputTwo"></div>
                 <label for="description">Description</label>
             </div>
@@ -84,9 +85,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 center-align">
-                <button type="submit" class="waves-effect waves-light btn button-style">Edit</button>
-                <a href="{{ url_for('edit_concert') }}" class="waves-effect waves-light btn button-style">Cancel</a>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <!-- cancel button -->
+                    <a href="{{ url_for('get_concerts') }}" class="btn-large red text-shadow">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                        Edit Task <i class="fas fa-edit right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </form>
