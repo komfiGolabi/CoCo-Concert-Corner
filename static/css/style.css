@@ -9,7 +9,7 @@ body {
   }
 
 
-h3,h2, h4{
+h3,h2, h4 {
     color:#E63E6D;
     text-align:center;
 }
@@ -35,5 +35,36 @@ h3,h2, h4{
 img {
     width:100%;
     height:auto;
+}
+
+p {
+    color:black;
+    font-size: 20px;
+}
+
+.btn-large {
+    background-color:#E63E6D;
+    color:#FEC260;
+}
+
+nav ul a {
+    color:#FEC260;
+    font-size: 20px;
+
+}
+nav .brand-logo,
+footer div.container,
+footer div.container a {
+    
+color:#FEC260;
+}
+
+.loglink {
+    color:#E63E6D;
+}
+
+.card-panel,
+input {
+    background-color: #FEC260;
 }
  
