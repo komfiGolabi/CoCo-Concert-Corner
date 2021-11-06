@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Manage Events By Genres!</h3>
+<div class="row">
+{% for category in categories %}
+<ul class="collection">
+    <li class="collection-item avatar">
+      <a href="#!" class="secondary-content"><i class="fas fa-headphones"></i></a>
+      <span class="title center-align"><strong>{{ category.genre }}</strong></span>
+    </li>
+
+    {% if session.user %}
+<div class="card-action">
+  <a href="#" class="btn green accent-4">Edit</a>
+  <a href="#" class="btn light-blue lighten-1">Delete</a>
+</div>
+          {% endif %}
+
+</ul>
+
+
+{% endfor %}
+</div>
+
+{% endblock %}
