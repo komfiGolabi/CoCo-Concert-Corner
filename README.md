@@ -84,10 +84,10 @@ Logo and Icons used free icons from [Font Awesome](https://fontawesome.com/?from
 
 ### Code
 
+* Whole project was based on the mini walk through project from Code Institute. Whole Python section and its functionality is taken from that project and once the skeleton and all the database conncetions were made, I started to change all the layout, adjusting it to the needs of my project. 
+
  * Navbar Menu was taken from Materialize CSS framework, using a dropdown menu, footer as well
- * [quiz](https://code-boxx.com/simple-javascript-quiz/), the code seemed overly complicated in the website, so with help of my mentor Antonio Rodriguez, I rewrote the code, so the effect would be the same, but with my understanding of Javascript and with simplified code.
- * Booking form was taken from the Bootstrap component section and modified for the project.
- [Form- form control](https://getbootstrap.com/docs/4.6/components/forms/)
+ * 
 
  
 * [Stack Overflow](https://stackoverflow.com/)
