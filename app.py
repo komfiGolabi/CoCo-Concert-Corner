@@ -113,10 +113,10 @@ def new_concert():
             "city": request.form.get("city"),
             "country": request.form.get("country"),
             "venue": request.form.get("venue"),
-            "genre": request.form.getlist("genre"),
+            "genre": request.form.get("genre"),
             "concert_date": request.form.get("concert_date"),
             "description": request.form.get("description"),
-            "uploaded_file": request.form.get("uploaded_file"),
+            "url_image": request.form.get("url_image"),
             "user_id": ObjectId(user["_id"]),
         }
 
@@ -139,10 +139,10 @@ def edit_concert(concert_id):
             "city": request.form.get("city"),
             "country": request.form.get("country"),
             "venue": request.form.get("venue"),
-            "genre": request.form.getlist("genre"),
+            "genre": request.form.get("genre"),
             "concert_date": request.form.get("concert_date"),
             "description": request.form.get("description"),
-            "uploaded_file": request.form.get("uploaded_file"),
+            "url_image": request.form.get("url_image"),
             "user_id": ObjectId(user["_id"]),
         }
         
@@ -152,7 +152,7 @@ def edit_concert(concert_id):
     event = mongo.db.concerts.find_one({"_id": ObjectId(concert_id)})
     categories = mongo.db.concerts.find().sort("category", 1)
     return render_template(
-        "edit_concert.html", event=event, categories=categories)
+        "edit_concert.html", concert=event, categories=categories)
 
 
 @app.route("/delete_concert/<concert_id>")

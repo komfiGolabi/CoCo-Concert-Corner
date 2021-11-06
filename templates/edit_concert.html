@@ -21,21 +21,21 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-city prefix"></i>
-                <input id="city" type="text" name="city" class="validate" required>
+                <input id="city" type="text" name="city" class="validate"  value="{{ concert.city }}" required>
                 <label for="city">City</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-flag prefix"></i>
-                <input id="country" type="text" name="country" class="validate" required>
+                <input id="country" type="text" name="country" class="validate"  value="{{ concert.country }}" required>
                 <label for="country">Country</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-building prefix"></i>
-                <input id="venue" type="text" name="venue"class="validate"
+                <input id="venue" type="text" name="venue"class="validate"  value="{{ concert.venue }}"
                     required>
                 <div id="dynamicInput"></div>
                 <label for="venue">Venue</label>
@@ -44,10 +44,9 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-record-vinyl prefix"></i>
-                <input id="genre" type="text" name="genre" minlength="3" maxlength="300" class="validate" required>
+                <input id="genre" type="text" name="genre" minlength="3" maxlength="300" class="validate"  value="{{ concert.genre }}" required>
                 <div id="dynamicInputTwo"></div>
                 <label for="category_name">Genre</label>
-                <a class="waves-effect waves-light btn" onClick="addMethod('dynamicInputTwo');">Add another genre</a>
             </div>
         </div>
 
@@ -62,26 +61,16 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-scroll prefix"></i>
-                <input id="description" type="text" name="description" value="{{- concert.description - }}" minlength="3" maxlength="300" class="validate" required>
+                <input id="description" type="text" name="description" minlength="3" maxlength="300" class="validate"  value="{{ concert.description }}" required>
                 <div id="dynamicInputTwo"></div>
                 <label for="description">Description</label>
             </div>
         </div>
         
         <div class="row">
-            
-            <div class="file-field input-field">
-                
-                <div class="btn">
-                    <span >File</span>
-                    <input type="file" name="user_file" accept=".png, .jpg, .jpeg, .gif" required>
-                </div>
-                
-    
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text"
-                        placeholder="Upload Image file (only .png, .jpg, .jpeg, .gif)">
-                </div>
+            <div class="file-field input-field col s12">
+                <i class="fas fa-image prefix"></i>
+                    <input type="url" name="url" required>
             </div>
         </div>
         <div class="row">
