@@ -82,3 +82,10 @@ span {
     text-align: center;
 }
 
+.input-field {
+    background-color: #FFD07F;
+}
+
+i {
+    color: #E63E6D;
+}
