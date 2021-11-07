@@ -113,10 +113,10 @@ def new_concert():
             "city": request.form.get("city"),
             "country": request.form.get("country"),
             "venue": request.form.get("venue"),
-            "genre": request.form.getlist("genre"),
+            "genre": request.form.get("genre"),
             "concert_date": request.form.get("concert_date"),
             "description": request.form.get("description"),
-            "uploaded_file": request.form.get("uploaded_file"),
+            "url_image": request.form.get("url_image"),
             "user_id": ObjectId(user["_id"]),
         }
 
@@ -142,7 +142,7 @@ def edit_concert(concert_id):
             "genre": request.form.getlist("genre"),
             "concert_date": request.form.get("concert_date"),
             "description": request.form.get("description"),
-            "uploaded_file": request.form.get("uploaded_file"),
+            "url_image": request.form.get("url_image"),
             "user_id": ObjectId(user["_id"]),
         }
         
