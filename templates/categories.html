@@ -3,6 +3,14 @@
 
 <h3>Manage Events By Genres!</h3>
 <div class="row">
+
+  <div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_category') }}" class="btn-large light-blue darken-2 text-shadow">
+            Add Genre<i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
 {% for category in categories %}
 <ul class="collection">
     <li class="collection-item avatar">

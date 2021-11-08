@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="title-style s6">
+    <h3 class="center-align">
+        Add a Genre!
+    </h3>
+</div>
+
+<div class="row form-bg-col">
+
+    <form class="col s12" method="POST" action="{{ url_for('add_category') }}" enctype="multipart/form-data">
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-record-vinyl prefix"></i>
+                <input id="genre" type="text" name="genre" minlength="3" maxlength="25"class="validate" required>
+                <div id="dynamicInputTwo"></div>
+                <label for="genre">Genre</label>
+            </div>
+        </div>
+
+       
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="waves-effect waves-light btn button-style">Add Genre</button>
+                <a href="{{ url_for('add_category') }}" class="waves-effect waves-light btn button-style">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
