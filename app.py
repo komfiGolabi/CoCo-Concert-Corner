@@ -25,6 +25,13 @@ def get_concerts():
     return render_template("concerts.html", concerts=concerts)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    concerts = list(mongo.db.concerts.find({"$text": {"$search": query}}))
+    return render_template("concerts.html", concerts=concerts)
+
+
 @app.route("/index")
 def index():
     return render_template("index.html")
