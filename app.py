@@ -32,6 +32,12 @@ def search():
     return render_template("concerts.html", concerts=concerts)
 
 
+@app.route("/get_review")
+def get_review():
+    reviews = list(mongo.db.reviews.find())
+    return render_template("concerts.html", reviews=reviews)
+
+
 @app.route("/index")
 def index():
     return render_template("index.html")
@@ -207,6 +213,26 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
+
+
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"]})
+        review = {
+            "concert_review": request.form.get("concert_review"),
+            "title_review": request.form.get("title_review"),
+            "user_name": request.form.get("user_name")
+        }
+
+        mongo.db.reviews.insert_one(review)
+        flash("Review succesfully added!")
+        return redirect(url_for("add_review"))
+
+    return render_template("add_review.html")
+
+    categories = mongo.db.reviews.find().sort("category", 1)
+    return render_template("add_review.html", categories=categories)
 
 
 if __name__ == "__main__":

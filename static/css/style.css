@@ -37,7 +37,8 @@ p {
     text-align: center;
 }
 
-.btn-large {
+.btn-large,
+.btn {
     background-color:#E63E6D;
     color:#FEC260;
 }
@@ -92,3 +93,14 @@ i {
 .fa-caret-down{
     color:#FEC260;
 }
+
+.search,
+.plus{
+    color:#FEC260;
+}
+
+.sidenav li a{
+    color:#FEC260;
+    font-size: 20px;
+}
+

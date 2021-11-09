@@ -16,14 +16,15 @@
         <header>
 
             <!--main menu with a dropdown-->
-        <nav class="nav-extended text-shadow light-blue darken-1">
+        <nav class="nav-extended text-shadow">
             
         <div class="nav-wrapper">
-            <a href="{{ url_for('get_concerts') }}" class="brand-logo text-darken text-shadow">CoCo-concert corner</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+            <a href="{{ url_for('get_concerts') }}" class="brand-logo">CoCo-concert corner</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars plus"></i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('get_concerts') }}">Browse Concerts</a></li>
+            <li><a href="{{ url_for('add_review') }}">Reviews</a></li>
             
             {% if session.user %}
 
@@ -45,12 +46,14 @@
         </nav>
             <!--Side NavBar-->
                 <ul class="sidenav" id="mobile-demo">
-                    <li><h4 class="center-align text-darken 4">CoCo-concert corner</h4></li>
+                    <li><h4 class="center-align">CoCo-concert corner</h4></li>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('get_concerts') }}">Browse Concerts</a></li>
+                    <li><a href="#">Reviews</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="{{ url_for('new_concert') }}">New Concert</a></li>
+                        <li><a href="{{ url_for('new_concert') }}">New concert</a></li>
+                        <li><a href="{{ url_for('add_review') }}">Review</a></li>
                         <li><a href="{{ url_for('get_categories') }}">Genres</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
