@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="title-style s6">
+    <h3 class="center-align">
+        Review the concert you attended!
+    </h3>
+</div>
+
+<div class="row form-bg-col">
+
+    <form class="col s12" method="POST" action="{{ url_for('add_review') }}" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field col s12">
+                <select>
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+              </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-scroll prefix"></i>
+                    <input id="description" type="text" name="description" minlength="3" maxlength="300" class="validate" required>
+                    <div id="dynamicInputTwo"></div>
+                    <label for="description">Review Title</label>
+                </div>
+            </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-scroll prefix"></i>
+                <input id="description" type="text" name="description" minlength="3" maxlength="300" class="validate" required>
+                <div id="dynamicInputTwo"></div>
+                <label for="description">Review</label>
+            </div>
+        </div>
+        
+      
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="waves-effect waves-light btn button-style">Submit</button>
+                <a href="{{ url_for('add_review') }}" class="waves-effect waves-light btn button-style">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
