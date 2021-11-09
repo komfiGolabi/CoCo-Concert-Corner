@@ -104,3 +104,12 @@ i {
     font-size: 20px;
 }
 
+.dropdown-content{
+    background-color:#FEC260;
+    
+}
+
+.dropdown-content li a {
+    color:#E63E6D;
+}
+
