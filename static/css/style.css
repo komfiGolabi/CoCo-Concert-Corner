@@ -79,6 +79,15 @@ img {
     background-color: #FFD07F;
 }
 
+.card .card-reveal {
+    background-color: #E63E6D;
+    
+}
+
+.fa-undo{
+    color:#FEC260;
+}
+
 span {
     text-align: center;
 }
@@ -112,4 +121,23 @@ i {
 .dropdown-content li a {
     color:#E63E6D;
 }
+/*categories section*/
+
+.fa-headphones{
+    font-size:25px;
+   
+}
+.genre-heading{
+ text-transform: uppercase;
+ margin-left: 40%;
+
+}
+
+.collection .collection-item.avatar,
+.card-action{
+    background-color: #FFD07F;
+    color:#E63E6D;
+}
+
+
 

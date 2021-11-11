@@ -20,38 +20,7 @@
       </div>
   </form>
 </div>
-<!--
-    <ul class="collapsible popout">
 
-      {% for concert in concerts %}
-        <li>
-          <div class="collapsible-header text-shadow">
-            <div class="col s9">
-            <i class="fas fa-music"></i>
-            <strong>{{ concert.artist }}</strong>:  {{ concert.concert_date }}
-            </div>
-
-            {% if session.user %}
-            <div class="col s3"><a href="{{ url_for('delete_concert', concert_id=concert._id) }}" class="btn-small">Delete</a>
-                
-                <a href="{{ url_for('edit_concert',concert_id=concert._id) }}" class="btn-small">Edit</a>
-            </div>
-          </div>
-          {% endif %}
-         
-            <div class="collapsible-body">
-              <span>
-              <strong>{{ concert.city }},  {{ concert.country }}</strong>
-              <p>{{ concert.description}}</p>
-              <p>{{ concert.genre }}</p>
-              <img src= "{{ concert.url_image }}">
-             </span>
-            </div>
-        </li>
-        
-        {% endfor %}
-    </ul>
-  -->
   {% if concerts|length > 0 %}
   {% for concert in concerts %}
   <div class="card">
@@ -65,7 +34,12 @@
     <div class="card-reveal">
       <span class="card-title"><strong>{{ concert.venue }}, {{ concert.city }}, {{ concert.country}}</strong><i class="fas fa-undo right"></i></span>
       <p>{{ concert.description }}</p>
-      <p>{{ concert.genre}}</p>
+      <p>Genre: {{ concert.genre}}</p>
+
+      {% if session.user %}
+        <a href="{{ url_for('delete_concert', concert_id=concert._id) }}" class="btn">Done</a>
+        <a href="{{ url_for('edit_concert', concert_id=concert._id) }}" class="btn">Edit</a>
+       {% endif %}
     </div>
   </div>
 {% endfor %}

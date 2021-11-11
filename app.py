@@ -32,8 +32,8 @@ def search():
     return render_template("concerts.html", concerts=concerts)
 
 
-@app.route("/get_review")
-def get_review():
+@app.route("/get_reviews")
+def get_reviews():
     reviews = list(mongo.db.reviews.find())
     return render_template("concerts.html", reviews=reviews)
 
@@ -229,10 +229,10 @@ def add_review():
         flash("Review succesfully added!")
         return redirect(url_for("add_review"))
 
-    return render_template("add_review.html")
+    return render_template("new_concert.html")
 
     categories = mongo.db.reviews.find().sort("category", 1)
-    return render_template("add_review.html", categories=categories)
+    return render_template("new_concert.html", categories=categories)
 
 
 if __name__ == "__main__":

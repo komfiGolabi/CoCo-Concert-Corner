@@ -24,7 +24,7 @@
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('get_concerts') }}">Browse Concerts</a></li>
-            <li><a href="{{ url_for('add_review') }}">Reviews</a></li>
+            <li><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
             
             {% if session.user %}
 
@@ -49,11 +49,10 @@
                     <li><h4 class="center-align">CoCo-concert corner</h4></li>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('get_concerts') }}">Browse Concerts</a></li>
-                    <li><a href="#">Reviews</a></li>
+                    <li><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('new_concert') }}">New concert</a></li>
-                        <li><a href="{{ url_for('add_review') }}">Review</a></li>
                         <li><a href="{{ url_for('get_categories') }}">Genres</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
