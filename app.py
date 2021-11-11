@@ -229,7 +229,7 @@ def add_review():
         flash("Review succesfully added!")
         return redirect(url_for("add_review"))
 
-    return render_template("new_concert.html")
+    return render_template("add_review.html")
 
     categories = mongo.db.reviews.find().sort("category", 1)
     return render_template("new_concert.html", categories=categories)
