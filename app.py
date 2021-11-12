@@ -152,7 +152,7 @@ def edit_concert(concert_id):
             "city": request.form.get("city"),
             "country": request.form.get("country"),
             "venue": request.form.get("venue"),
-            "genre": request.form.getlist("genre"),
+            "genre": request.form.get("genre"),
             "concert_date": request.form.get("concert_date"),
             "description": request.form.get("description"),
             "url_image": request.form.get("url_image"),
@@ -177,7 +177,7 @@ def delete_concert(concert_id):
 
 @app.route("/get_categories")
 def get_categories():
-    categories = list(mongo.db.categories.find().sort("genre", 1))
+    categories = mongo.db.categories.find().sort("genre", 1)
     return render_template("categories.html", categories=categories)
 
 

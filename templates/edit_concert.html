@@ -53,7 +53,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-calendar-alt prefix"></i>
-                <input id="concert_date" type="text" name="concert_date" class="datepicker validate" required>
+                <input id="concert_date" type="text" value="{{ concert.concert_date }}" name="concert_date" class="datepicker validate" required>
                 <div id="dynamicInputTwo"></div>
                 <label for="concert_date">Date of the event</label>
             </div>
@@ -70,10 +70,12 @@
         <div class="row">
             <div class="file-field input-field col s12">
                 <i class="fas fa-image prefix"></i>
-                <input type="url" name="url" required>
-                <label for="image_url">Image url</label>
+                <input type="url" name="url_image" id="url_image" value="{{ concert.url_image }}" required>
+                <div id="dynamicInputTwo"></div>
+                <label for="url_image">Image url</label>
             </div>
         </div>
+
 
 
         <div class="row">
@@ -84,7 +86,7 @@
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
                     <button type="submit" class="btn-large">
-                        Edit Task <i class="fas fa-edit right"></i>
+                        Edit Event<i class="fas fa-edit right"></i>
                     </button>
                 </div>
             </div>
