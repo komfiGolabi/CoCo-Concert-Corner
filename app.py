@@ -22,6 +22,10 @@ mongo = PyMongo(app)
 @app.route("/get_concerts")
 def get_concerts():
     concerts = list(mongo.db.concerts.find())
+    for concert in concerts:
+        concert['reviews'] = list(mongo.db.reviews.find(
+            {'concert': concert['_id']}))
+    print('concerts', concerts)
     return render_template("concerts.html", concerts=concerts)
 
 
@@ -220,16 +224,20 @@ def add_review():
     if request.method == "POST":
         user = mongo.db.users.find_one({"username": session["user"]})
         review = {
+            "concert": ObjectId(request.form.get("concert")),
             "concert_review": request.form.get("concert_review"),
-            "title_review": request.form.get("title_review"),
-            "user_name": request.form.get("user_name")
+            "title_review": request.form.get("review_title"),
+            "user_name": session["user"]
         }
 
         mongo.db.reviews.insert_one(review)
         flash("Review succesfully added!")
         return redirect(url_for("add_review"))
 
-    return render_template("add_review.html")
+    categories = mongo.db.reviews.find().sort("category", 1)
+    concerts = list(mongo.db.concerts.find())
+    return render_template(
+        "add_review.html", categories=categories, concerts=concerts)
 
     categories = mongo.db.reviews.find().sort("category", 1)
     return render_template("new_concert.html", categories=categories)
