@@ -12,14 +12,13 @@
         
         <div class="input-field col s12 browser-default">
             <i class="fas fa-hand-point-right prefix"></i>
-            <select>
-            <option value="" disabled selected>Choose your event</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
+            <select class="select" name="concert">
+                {%for concert in concerts%}
+                    <option value="{{concert._id}}">{{ concert.artist }} - {{ concert.concert_date }}</option>
+                {%endfor%}
             </select>
             <label>Choose Event</label>
-        </div>    
+        </div>     
             
     
       
