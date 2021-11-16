@@ -64,7 +64,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
+        # put the new user into 'session'  cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -175,7 +175,7 @@ def edit_concert(concert_id):
 @app.route("/delete_concert/<concert_id>")
 def delete_concert(concert_id):
     mongo.db.concerts.remove({"_id": ObjectId(concert_id)})
-    flash("Task Successfully Deleted")
+    flash("Event Successfully Deleted")
     return redirect(url_for("get_concerts"))
 
 

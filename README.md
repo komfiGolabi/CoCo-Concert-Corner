@@ -3,10 +3,11 @@
 ## Languages used: HMTL, CSS, Javascript, Python, Materialize CSS framework, MongoDB
 
 
-[CoCo Live Page]()
+[CoCo Live Page](https://coco-concert-corner.herokuapp.com/)
 
 
-![project on different devices]()
+
+![project on different devices](static/images/resp.jpg)
 
 
 
@@ -46,7 +47,10 @@ This section will provide a form where user can create a profile or sign in to a
 
 
  ### Features to add in future
-
+* APIs for each genre that launch the playlists in the particular genres
+* Api for the music for each artist
+* functionality that double checks the password when registering the profile
+* functionality that double checks if the user wants to delete a chosen thing
 
 
 
@@ -93,8 +97,7 @@ Logo and Icons used free icons from [Font Awesome](https://fontawesome.com/?from
 * [Stack Overflow](https://stackoverflow.com/)
 * [Free Code Camp](https://www.freecodecamp.org/)
 * [W3 schools](https://www.w3schools.com/html/default.asp)
-* [Codecademy]()
-* [You Tube Quiz Tutorials]()
+
 
 
 #### Whole process 
@@ -112,8 +115,10 @@ Logo and Icons used free icons from [Font Awesome](https://fontawesome.com/?from
 
 [HTML Validator Page](https://validator.w3.org/)
 
+Html validation was throwing errors when used the code from the working environment, so the validation was made by opening the website and using the view source option, when right clicking on the mouse and then validated.
 
-![image of passed html validator page]()
+
+![image of passed html validator page](static/images/css-validator.jpg)
 
 [CSS Validator Page](https://jigsaw.w3.org/css-validator/)
 * Code from style.css was copied as a direct input into the CSS validator page and no errors were found.

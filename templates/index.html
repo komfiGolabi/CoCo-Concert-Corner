@@ -3,22 +3,30 @@
 
 {% block content %}
 <div class="parallax-container">
-    <img class="responsive-img" src="static/images/screen.jpg">
+    <img class="responsive-img" src="static/images/screen.jpg" alt="concert crowd with a mobile">
     
   </div>
   
     <div class="row container">
-      <h2 class="header">Concert Corner</h2>
+      <h1 class="header">Concert Corner</h1>
       <h4 class="header">Where all your event memories meet!</h4>
       <p class="grey-text text-darken-3 lighten-3">Concert Corner or CoCo is the place where you can make a collection of the music events you participated in, where you can keep and share your memories.
         Register if you want to be a part of our CoCo community!
       </p>
-      <a href="{{ url_for('register') }}">
+
+      <form action="{{ url_for('register') }}" method="GET">
+        <button type="submit" class="col s12 btn-large">Register!
+          <i class="fas fa-sign-in-alt"></i>
+        </button>
+    </form>
+
+     <!-- <a href="{{ url_for('register') }}">
       <button type="submit" class="col s12 btn-large">Register
       <i class="fas fa-sign-in-alt"></i></button></a>
+      -->
     </div>
 
-    <div><img src="static/images/heart-crowd.jpg"></div>
+    <img class="responsive-img" src="static/images/heart-crowd.jpg" alt="concert crowd with a heart">
 
 
 
