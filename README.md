@@ -1,6 +1,6 @@
 # CoCo- Concert Corner
 ##  Code created by Kamila Golebiowska for Code Institute
-## Languages used: HMTL, CSS, Javascript, Python, Materialize CSS framework, MongoDB
+## Languages used: HMTL, CSS, Javascript, Python, Materialize CSS framework, MongoDB, Flask
 
 
 [CoCo Live Page](https://coco-concert-corner.herokuapp.com/)
@@ -71,6 +71,7 @@ This section will provide a form where user can create a profile or sign in to a
 
 ### Content
 
+All text content was written by me-Kamila Golebiowska. 
 
 ### Images 
 
@@ -97,10 +98,16 @@ Logo and Icons used free icons from [Font Awesome](https://fontawesome.com/?from
 * [Stack Overflow](https://stackoverflow.com/)
 * [Free Code Camp](https://www.freecodecamp.org/)
 * [W3 schools](https://www.w3schools.com/html/default.asp)
+* [Random Key](https://randomkeygen.com/)
 
 
 
 #### Whole process 
+
+* First Step was to create the collections in database-MongoDB
+ ![Concerts Collection](static/images/concertDB.jpg)
+ ![Reviews Collection](static/images/reviews.jpg)
+* installed Flask and Python libraries, plus created the env.py file to store sensitive data
 
 
 ## Handling Bugs and what is remaining
@@ -116,13 +123,14 @@ Logo and Icons used free icons from [Font Awesome](https://fontawesome.com/?from
 [HTML Validator Page](https://validator.w3.org/)
 
 Html validation was throwing errors when used the code from the working environment, so the validation was made by opening the website and using the view source option, when right clicking on the mouse and then validated.
+It passed the validation, all pages had the same warning, which refers to the section with flash messages. The rest of the errors has been fixed.
 
+![image of passed html validator page](static/images/html-validator.jpg)
 
-![image of passed html validator page](static/images/css-validator.jpg)
 
 [CSS Validator Page](https://jigsaw.w3.org/css-validator/)
 * Code from style.css was copied as a direct input into the CSS validator page and no errors were found.
-
+![image of passed css validator page](static/images/css-validator1.jpg)
 
 
 Google Dev Tool: Lighthouse 
@@ -137,10 +145,14 @@ Lighthouse testing was fluctuating slightly due to the course of the project and
  
 
  ### First Time User:
+* if the page looks attractive
+* if it's easy to register a profile
+* if I can easily store my events and if it's easy to browse the events
  
 
  ### Returning User
-
+ * easy access to login to my profile
+ * if I can easily edit my events 
 
 
 ## Deployment
