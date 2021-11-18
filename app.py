@@ -162,7 +162,6 @@ def edit_concert(concert_id):
             "url_image": request.form.get("url_image"),
             "user_id": ObjectId(user["_id"]),
         }
-                                                                                      
         mongo.db.concerts.update({"_id": ObjectId(concert_id)}, edit_concert)
         flash("You succesfully edited your event!")
 

@@ -162,3 +162,25 @@ span {
     border-radius: 5px;
 }
 
+@media screen and (min-width:341px) and (max-width:465px){
+.search-placeholder{
+    display: none;
+}
+nav .brand-logo, h3,h1{
+    font-size: medium;
+}
+.buttons i{
+    font-size: small;
+    text-align: center
+}
+}
+
+
+@media screen and (min-width:279px) and (max-width:341px){
+    .search-placeholder{
+        display: none;
+    }
+    nav .brand-logo, h3,h1{
+        font-size: small;
+    }
+}
