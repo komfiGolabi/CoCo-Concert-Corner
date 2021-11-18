@@ -28,13 +28,13 @@ There will be a small intro icluded with the registration button.
 Next Page will have a collection of the concerts/events that was put into a database by user. It will be made of cards, with a small photo, data, place of the event. When pressed on the phot there will be more info about the concert and space for reviews. All information will be users information stored in database.
 
 ![Main collection site](static/images/browse.jpg)
-![Flip card](static/images/flip.jpg)
+![Flip card](static/images/flip-card.jpg)
 
 ### Register/Login
 
 This section will provide a form where user can create a profile or sign in to already registered profile.
 
- ![Register/Login](register.jpg)
+ ![Register/Login](static/images/register.jpg)
 
  
 
@@ -72,7 +72,17 @@ This section will provide a form where user can create a profile or sign in to a
 All text content was written by me-Kamila Golebiowska. 
 
 ### Images 
+The images for the website were taken from the [Unsplash](https://unsplash.com/images)
 
+[crowd with the mobile phone](https://unsplash.com/photos/JNuKyKXLh8U)
+[crowd with a heart gesture](https://unsplash.com/photos/hzgs56Ze49s)
+Artists photos that I put into the new concert form were taken from random websites.
+[Chronixx](https://www.caribbeannationalweekly.com/caribbean-breaking-news-featured/chronixx-among-nominees-grammys-best-reggae-album/)
+[Children of Zeus](https://www.manchestersfinest.com/music/children-of-zeus-announce-uk-tour/)
+[Bjork](https://gif-ac.com/bjork-utopia-70/)
+[Arrested Development](https://dfw.cbslocal.com/2016/06/22/raps-arrested-development-still-making-music-on-their-terms/)
+[Protoje](https://www.rcarecords.com/news/protoje-unleashes-new-studio-album-in-search-of-lost-time-out-today/)
+[Glastonbury](https://meaww.com/taylor-swift-headline-glastonbury-2020-paul-mc-cartney-diana-ross-aerosmith-michael-eavis-emily-eavis)
 
 
 
@@ -85,11 +95,11 @@ Logo and Icons used free icons from [Font Awesome](https://fontawesome.com/?from
 
 ### Code
 
-* Whole project was based on the mini walk through project from Code Institute. Whole Python section and its functionality is taken from that project and once the skeleton and all the database conncetions were made, I started to change all the layout, adjusting it to the needs of my project. 
+* Whole project was based on the mini walk through project from Code Institute. Whole Python section and its functionality is taken from that project and once the skeleton and all the database conncetions were made, I started to change all the layout, adjusting it to the needs of my project.
+I followed once more the videos from the project and was adjusting things o the way. 
 
- * Navbar Menu was taken from Materialize CSS framework, using a dropdown menu, footer as well
- * 
-
+* Structure was taken from Materialize CSS framework, using a dropdown menu, footer as well
+ 
  
 * [Stack Overflow](https://stackoverflow.com/)
 * [Free Code Camp](https://www.freecodecamp.org/)
@@ -136,11 +146,11 @@ It passed the validation, all pages had the same warning, which refers to the se
 * Code from style.css was copied as a direct input into the CSS validator page and no errors were found.
 ![image of passed css validator page](static/images/css-validator1.jpg)
 
-
+* ![Jshint validation](static/images/jshint.jpg)
 Google Dev Tool: Lighthouse 
 
-![Desktop Lighthouse Testing]()
-![Mobile Lighthouse Testing]()
+![Desktop Lighthouse Testing](static/images/desktop-lighthouse.jpg)
+![Mobile Lighthouse Testing](static/images/mobile-lighthouse.jpg)
 
 Lighthouse testing was fluctuating slightly due to the course of the project and the photos are showing the final results.
 
@@ -149,14 +159,15 @@ Lighthouse testing was fluctuating slightly due to the course of the project and
  
 
  ### First Time User:
-* if the page looks attractive
-* if it's easy to register a profile
-* if I can easily store my events and if it's easy to browse the events
- 
+* page has an attractive lay out
+* it is easy to register, doesn't require any complicated steps
+* the design is fresh
 
  ### Returning User
- * easy access to login to my profile
- * if I can easily edit my events 
+ * easy to login
+ * nice to browse through the events
+ * good for adding the reviews
+ 
 
 
 ## Deployment
