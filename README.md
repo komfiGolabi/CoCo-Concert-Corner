@@ -60,7 +60,7 @@ This section will provide a form where user can create a profile or sign in to a
 
 
 ## Wireframes
- [Wireframes]()
+ [Wireframes](https://docs.google.com/document/d/1T0k_0vAUSKuJSf3-KlhPQQSdszLvi9gB836b1UhJm2k/edit?usp=sharing)
 
 
 
@@ -127,7 +127,12 @@ Copied the string underneath to the clipboard, pasted it to the empty space for 
 ## Handling Bugs and what is remaining
 ### My struggles
 
+There were many struggles, that's why the Code Institute walkthrough project was my step by step guide in this project. I had few times problems with connecting MongoDb, in the Puthon functions, I could see I wasn't the best with identations, so had to fix quite a lot of issues with that.
+
 ### Existing Bugs
+
+* buttons in the browsing section would liekt o see in line with the search input field
+
 
 
 ## Testing
