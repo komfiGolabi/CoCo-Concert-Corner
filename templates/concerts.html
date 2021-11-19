@@ -12,12 +12,12 @@
               <label for="query" class="search-placeholder">Search Concerts</label>
           </div>
           <div class="col s12 m4 buttons">
-            <i class="fas fa-undo right"></i>
-            <a href="{{ url_for('get_concerts') }}" class="btn text-shadow reset"><i class="fas fa-undo left"></i></a>
           
-            <button type="submit" class="btn text-shadow reset">
-                <i class="fas fa-search left search"></i> 
-            </button>
+            <button type="submit" class="btn text-shadow left butsearch">
+                <i class="fas fa-search search left"></i>Search 
+              </button>
+            <a href="{{ url_for('get_concerts') }}" class="btn text-shadow left reset"><i class="fas fa-undo left"></i>Reset</a>
+          
         </div>
       </div>
   </form>
@@ -37,10 +37,12 @@
       <span class="card-title"><strong>{{ concert.venue }}, {{ concert.city }}, {{ concert.country}}</strong><i class="fas fa-undo right"></i></span>
       <p>{{ concert.description }}</p>
       <p>Genre: {{ concert.genre }}</p>
-      {% if session.user %}
-      <a href="{{ url_for('delete_concert', concert_id=concert._id) }}" class="btn">Done</a>
-      <a href="{{ url_for('edit_concert', concert_id=concert._id) }}" class="btn">Edit</a>
+
+      {% if session.user|lower == concert.author|lower %}
+       <a href="{{ url_for('delete_concert', concert_id=concert._id) }}" class="btn">Done</a>
+       <a href="{{ url_for('edit_concert', concert_id=concert._id) }}" class="btn">Edit</a>
      {% endif %}
+
       {%for review in concert.reviews %}
       <p>Reviews:</p>
       <p>by {{review.user_name}}: {{review.concert_review}}  {{review.title_review}} </p>
