@@ -15,7 +15,12 @@ h3,h2,h1, h4 {
 }
 
 .responsive-img{
-    height:auto;
+    background:no-repeat;
+    background-size: cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position: relative;
 
 }
 
@@ -130,6 +135,8 @@ i {
 .card-reveal p{
     color:#FFCE45;
 }
+
+
 .card-panel,
 input {
     background-color: #FEC260;
@@ -177,54 +184,26 @@ span {
 
 /*media queries*/
 @media screen and (min-width:993px) and (max-width:1118px){
-
     .reset{
         margin:5px;
     }
 }
 
-@media screen and (min-width:260px) and (max-width:953px){
-
-.reset{
-    margin:5px;
-}
-    
-}
-
-@media screen and (min-width:341px) and (max-width:465px){
-.search-placeholder{
-    display: none;
-}
-nav .brand-logo, h3,h1{
-    font-size: medium;
-}
-.buttons i{
-    font-size: small;
-    
-}
-.header,.headerp{
-    font-size: medium;
-}
-}
-
-@media screen and (min-width:260px) and (max-width:341px){
-    .search-placeholder{
-        display: none;
-    }
-    nav .brand-logo, h3,h1{
-        font-size: small;
-    }
-
-    .buttons i{
-        font-size: small;
-    
-    }
+@media screen and (min-width:601px) and (max-width:918px){
     .reset{
-        letter-spacing: 0px;
-        
+        margin:5px;
     }
-    .buttons{
-        display:inline-block;
-    }
+}
 
-    }
+@media screen and (min-width:280px) and (max-width:496px){
+   .header{
+       font-size: large;
+   }
+    
+}
+
+
+
+
+
+   
