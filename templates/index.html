@@ -2,23 +2,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="parallax-container">
-    <img class="responsive-img" src="static/images/screen.jpg" alt="concert crowd with a mobile">
-    
+  <div>
+      <img class="responsive-img" src="static/images/screen.jpg" alt="concert crowd with a mobile">
   </div>
-  
+    
     <div class="row container">
-      <h1 class="header">Concert Corner</h1>
-      <h4 class="header">Where all your event memories meet!</h4>
-      <p class="grey-text text-darken-3 lighten-3 headerp">Concert Corner or CoCo is the place where you can make a collection of the music events you participated in, where you can keep and share your memories.
-        Register if you want to be a part of our CoCo community!
-      </p>
+        <h1 class="header">Concert Corner</h1>
+        <h4 class="header">Where all your event memories meet!</h4>
+        <p class="grey-text text-darken-3 lighten-3 headerp">Concert Corner or CoCo is the place where you can make a collection of the music events you participated in, where you can keep and share your memories.
+          Register if you want to be a part of our CoCo community!
+        </p>
 
-      <form action="{{ url_for('register') }}" method="GET">
-        <button type="submit" class="col s12 btn-large">Register!
-          <i class="fas fa-sign-in-alt"></i>
-        </button>
-    </form>
+        <form action="{{ url_for('register') }}" method="GET">
+          <button type="submit" class="col s12 btn-large">Register!
+            <i class="fas fa-sign-in-alt"></i>
+          </button>
+      </form>
     </div>
 
     <img class="responsive-img" src="static/images/heart-crowd.jpg" alt="concert crowd with a heart">
