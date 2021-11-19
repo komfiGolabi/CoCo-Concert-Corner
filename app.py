@@ -124,7 +124,7 @@ def logout():
 @app.route("/new_concert", methods=["GET", "POST"])
 def new_concert():
     if request.method == "POST":
-        user = mongo.db.users.find_one({"username": session["user"]})
+        user = mongo.db.users.find_one({"username": session["user"]}["_id"])
         new_concert = {
             "artist": request.form.get("artist"),
             "city": request.form.get("city"),
@@ -135,6 +135,7 @@ def new_concert():
             "description": request.form.get("description"),
             "url_image": request.form.get("url_image"),
             "user_id": ObjectId(user["_id"]),
+            "author":  session["user"]
         }
 
         mongo.db.concerts.insert_one(new_concert)
@@ -161,6 +162,7 @@ def edit_concert(concert_id):
             "description": request.form.get("description"),
             "url_image": request.form.get("url_image"),
             "user_id": ObjectId(user["_id"]),
+            "author":  session["user"]
         }
         mongo.db.concerts.update({"_id": ObjectId(concert_id)}, edit_concert)
         flash("You succesfully edited your event!")
