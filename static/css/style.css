@@ -14,6 +14,11 @@ h3,h2,h1, h4 {
     text-align:center;
 }
 
+.responsive-img{
+    height:auto;
+
+}
+
 .nav-wrapper,
 .sidenav,
 .collapsible-header,
@@ -43,6 +48,10 @@ p {
     color:#FEC260;
 
 }
+.buttons i{
+    font-size: 15px;
+    
+}
 
 nav ul a {
     color:#FEC260;
@@ -55,6 +64,10 @@ footer div.container a {
     
 color:#FEC260;
 }
+.butsearch {
+    margin-right: 5px;;
+}
+
 
 .loglink {
     color:#E63E6D;
@@ -162,6 +175,22 @@ span {
     border-radius: 5px;
 }
 
+/*media queries*/
+@media screen and (min-width:993px) and (max-width:1118px){
+
+    .reset{
+        margin:5px;
+    }
+}
+
+@media screen and (min-width:260px) and (max-width:953px){
+
+.reset{
+    margin:5px;
+}
+    
+}
+
 @media screen and (min-width:341px) and (max-width:465px){
 .search-placeholder{
     display: none;
@@ -171,16 +200,31 @@ nav .brand-logo, h3,h1{
 }
 .buttons i{
     font-size: small;
-    text-align: center
+    
+}
+.header,.headerp{
+    font-size: medium;
 }
 }
 
-
-@media screen and (min-width:279px) and (max-width:341px){
+@media screen and (min-width:260px) and (max-width:341px){
     .search-placeholder{
         display: none;
     }
     nav .brand-logo, h3,h1{
         font-size: small;
     }
-}
+
+    .buttons i{
+        font-size: small;
+    
+    }
+    .reset{
+        letter-spacing: 0px;
+        
+    }
+    .buttons{
+        display:inline-block;
+    }
+
+    }
